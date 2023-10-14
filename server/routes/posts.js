@@ -4,9 +4,11 @@ import { verifyToken } from "../middleware/auth.js";
 
 const router = express.Router();
 
-/* READ yaha karna donga*/
+/* READ */
+router.get("/", verifyToken, getFeedPosts);
+router.get("/:userId/posts", verifyToken, getUserPosts);
 
-/* UPDATE yaha karna donga */
-
+/* UPDATE */
+router.patch("/:id/like", verifyToken, likePost);
 
 export default router;
