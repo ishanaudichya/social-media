@@ -29,6 +29,7 @@ function App() {
               element={isAuth ? <ProfilePage /> : <Navigate to="/" />}
             />
           </Routes>
+          {/* <ProfilePage/> */}
           <ToastContainer/>
         </ThemeProvider>
       </BrowserRouter>
