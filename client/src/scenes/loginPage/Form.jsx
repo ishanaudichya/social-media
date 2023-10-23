@@ -46,7 +46,7 @@ const initialValuesLogin = {
   password: "",
 };
 
-const Form = ({popIncorrectPass,popUserCreated}) => {
+const Form = ({ popIncorrectPass, popUserCreated }) => {
   const [pageType, setPageType] = useState("login");
   const { palette } = useTheme();
   const dispatch = useDispatch();
@@ -64,7 +64,7 @@ const Form = ({popIncorrectPass,popUserCreated}) => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "http://localhost:6001/auth/register",
+      "https://social-media-nine-hazel.vercel.app/auth/register",
       {
         method: "POST",
         body: formData,
@@ -80,28 +80,30 @@ const Form = ({popIncorrectPass,popUserCreated}) => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("http://localhost:6001/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    });
+    const loggedInResponse = await fetch(
+      "https://social-media-nine-hazel.vercel.app/auth/login",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      }
+    );
     const loggedIn = await loggedInResponse.json();
     onSubmitProps.resetForm();
     // console.log(loggedIn.msg);
-    if (loggedIn.msg === 'User does not exist. '){
+    if (loggedIn.msg === "User does not exist. ") {
       popIncorrectPass();
       // console.log("came here");
-    } 
-    else if(loggedIn.msg === 'Invalid credentials. '){
+    } else if (loggedIn.msg === "Invalid credentials. ") {
       popIncorrectPass();
       // console.log("came here");
-    } 
+    }
 
     if (loggedIn) {
       dispatch(
         setLogin({
           user: loggedIn.user,
-          token: loggedIn.token,  
+          token: loggedIn.token,
         })
       );
       navigate("/home");
@@ -217,7 +219,6 @@ const Form = ({popIncorrectPass,popUserCreated}) => {
                     )}
                   </Dropzone>
                 </Box>
-        
               </>
             )}
 
