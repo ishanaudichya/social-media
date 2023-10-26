@@ -109,3 +109,7 @@ The website is up and running on `vercel` with proper json configuration for exp
 - the front end client is running at https://vitsphere.vercel.app/
 
 Note: The login page shows an email and password to use for demo purposes.
+
+## Updates
+
+All the upcoming registered links and updates will be shwon here
