@@ -86,7 +86,7 @@ To get started with Vit Sphere, follow these steps:
    ```
 
 3. Add a `.env` file in server folder with your own Mongo url and jwt token as shown below.
-   ```json
+   ```
    MONGO_URL="your mongo link"
    JWT_SECRET="your secret"
    ```

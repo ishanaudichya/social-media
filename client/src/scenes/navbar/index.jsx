@@ -86,12 +86,16 @@ const Navbar = () => {
           <IconButton onClick={() => navigate("/inbox")}>
             <Message sx={{ fontSize: "25px" }} />
           </IconButton>
-          <IconButton>
-            <Notifications sx={{ fontSize: "25px" }} />
-          </IconButton>
-          <IconButton>
-            <Help sx={{ fontSize: "25px" }} />
-          </IconButton>
+          <a href="https://github.com/ishanaudichya/social-media/">
+            <IconButton>
+              <Notifications sx={{ fontSize: "25px" }} />
+            </IconButton>
+          </a>
+          <a href="https://github.com/ishanaudichya/social-media/blob/main/README.md">
+            <IconButton>
+              <Help sx={{ fontSize: "25px" }} />
+            </IconButton>
+          </a>
           <FormControl variant="standard" value={fullName}>
             <Select
               value={fullName}
