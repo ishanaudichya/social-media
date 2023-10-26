@@ -1,7 +1,9 @@
 # Vit Sphere - A VIT Student Social Media Platform
 
-![Vit Sphere Logo](./client/src/vitgif.gif)
-
+<!-- ![Vit Sphere Logo](./client/src/vitgif.gif) -->
+<p align="center">
+  <img src="./client/src/vitgif.gif" />
+</p>
 Vit Sphere is a full-stack MERN (MongoDB, Express, React, Node.js) project designed to create a thriving online community for VIT students. This platform allows students to connect, share posts, toggle between dark and light themes, and manage their sessions securely. Whether you're new to VIT or an existing student, Vit Sphere is the perfect place to engage with your peers.
 
 ## Table of Contents
