@@ -168,9 +168,19 @@ const Navbar = () => {
                 <LightMode sx={{ color: dark, fontSize: "25px" }} />
               )}
             </IconButton>
-            <Message sx={{ fontSize: "25px" }} />
-            <Notifications sx={{ fontSize: "25px" }} />
-            <Help sx={{ fontSize: "25px" }} />
+            <IconButton onClick={() => navigate("/inbox")}>
+              <Message sx={{ fontSize: "25px" }} />
+            </IconButton>
+            <a href="https://github.com/ishanaudichya/social-media/">
+              <IconButton>
+                <Notifications sx={{ fontSize: "25px" }} />
+              </IconButton>
+            </a>
+            <a href="https://github.com/ishanaudichya/social-media/blob/main/README.md">
+              <IconButton>
+                <Help sx={{ fontSize: "25px" }} />
+              </IconButton>
+            </a>
             <FormControl variant="standard" value={fullName}>
               <Select
                 value={fullName}
