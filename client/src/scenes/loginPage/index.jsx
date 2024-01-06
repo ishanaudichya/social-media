@@ -1,7 +1,7 @@
 import {
   Box,
   Typography,
-  useTheme,
+  // useTheme,
   // useMediaQuery
 } from "@mui/material";
 import Form from "./Form";
@@ -10,8 +10,8 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import video1 from "../../bgvid.mp4";
 const LoginPage = () => {
-  const theme = useTheme();
-  const imageClass = theme.palette.mode === "dark" ? "invert" : "";
+  // const theme = useTheme();
+  // const imageClass = theme.palette.mode === "dark" ? "invert" : "";
   // const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const popIncorrectPass = () => {
     toast.error("Incorrect Email or Password", {
@@ -50,41 +50,42 @@ const LoginPage = () => {
           Your browser does not support the video tag.
         </video>
       </div>
-
-      <Box
-        width="30vw"
-        p="2rem"
-        minWidth="450px"
-        m="1rem auto"
-        borderRadius="1.5rem"
-        className="glass"
-        margin="auto"
-      >
+      <div className="vertical-center">
         <Box
-          width="100%"
-          // p="1rem 6%"
-          textAlign="center"
+          width="30vw"
+          p="2rem"
+          minWidth="450px"
+          m="1rem auto"
+          borderRadius="1.5rem"
+          className="glass"
+          margin="auto"
         >
-          <img
-            alt="logo"
-            style={{
-              filter:
-                "grayscale(100%) brightness(70%) sepia(50%) hue-rotate(-100deg) saturate(500%) contrast(1)",
-              width: "10vw",
-              minWidth: "8rem",
-            }}
-            src={vitsphere}
+          <Box
+            width="100%"
+            // p="1rem 6%"
+            textAlign="center"
+          >
+            <img
+              alt="logo"
+              style={{
+                filter:
+                  "grayscale(100%) brightness(70%) sepia(50%) hue-rotate(-100deg) saturate(500%) contrast(1)",
+                width: "10vw",
+                minWidth: "8rem",
+              }}
+              src={vitsphere}
+            />
+          </Box>
+
+          <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
+            Welcome to VitSphere, the Social Media for just us VIT Peeps!
+          </Typography>
+          <Form
+            popIncorrectPass={popIncorrectPass}
+            popUserCreated={popUserCreated}
           />
         </Box>
-
-        <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-          Welcome to VitSphere, the Social Media for just us VIT Peeps!
-        </Typography>
-        <Form
-          popIncorrectPass={popIncorrectPass}
-          popUserCreated={popUserCreated}
-        />
-      </Box>
+      </div>
 
       <style>{`
       .invert {
@@ -115,7 +116,7 @@ imglog{
   }
 }
 .video-background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -137,6 +138,14 @@ imglog{
     border-radius: 20px;
     border:1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 
