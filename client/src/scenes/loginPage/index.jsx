@@ -67,6 +67,7 @@ const LoginPage = () => {
           >
             <img
               alt="logo"
+              draggable="false"
               style={{
                 filter:
                   "grayscale(100%) brightness(70%) sepia(50%) hue-rotate(-100deg) saturate(500%) contrast(1)",
